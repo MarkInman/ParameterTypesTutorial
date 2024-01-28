@@ -1,0 +1,26 @@
+﻿@page "/EventCallbackParameter"
+@rendermode InteractiveServer
+
+<h3>Event Callback Parameters</h3>
+
+<p> The hero selected was '@_superHero'</p>
+
+<DropdownList Items="_superheroes" OnItemSelected="SuperHeroSelected" />
+
+<p> The villian selected was '@_superVillian'</p>
+
+<DropdownList Items="_superVillians" />
+
+
+@code {
+    private string _superHero;
+    private string _superVillian;
+
+    private List<string> _superheroes = new List<string>() { "Mr Fantastic", "Spider-Man", "Iron Man", "Wolverine" };
+    private List<string> _superVillians = new List<string>() { "Dr Doom", "Green Goblin", "The Mandarin", "Sabertooth" };
+
+    private void SuperHeroSelected(string superHero)
+    {
+        _superHero = superHero;
+    }
+}

@@ -1,0 +1,16 @@
+﻿@page "/GenericParameter"
+@rendermode InteractiveServer
+
+<h3>Generic Parameters</h3>
+
+<DataList Items="_intItems" TItem="int" />
+
+<DataList Items="_stringItems" TItem="string" />
+
+@code {
+
+    private List<int> _intItems = new List<int>() { 1, 2, 3, 4 };
+
+    private List<string> _stringItems = new List<string>() { "Mr Fantastic", "Invisible Woman", "The Thing", "The Human Torch"  };
+
+}

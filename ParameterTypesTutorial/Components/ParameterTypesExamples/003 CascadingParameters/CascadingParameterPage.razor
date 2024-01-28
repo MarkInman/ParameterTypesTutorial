@@ -1,0 +1,14 @@
+﻿@page "/CascadingParameter"
+@rendermode InteractiveServer
+
+<h3>Cascading Parameters</h3>
+    
+<CascadingValue Value="@_themeMode">
+    <OuterPanel />
+</CascadingValue> 
+
+@code {
+
+    private string _themeMode = "dark-mode";
+
+}

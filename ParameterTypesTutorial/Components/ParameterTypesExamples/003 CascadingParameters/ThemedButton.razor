@@ -1,0 +1,16 @@
+﻿
+@if (Theme == "dark-mode")
+{
+    <button style="background-color: darkgreen; color: lightgreen;">Themed Button</button>
+}
+else
+{
+    <button style="background-color: lightgreen; color: darkgreen;">Themed Button</button>
+}
+
+@code {
+
+    [CascadingParameter]
+    public string Theme { get; set; } = "light-mode";
+
+}

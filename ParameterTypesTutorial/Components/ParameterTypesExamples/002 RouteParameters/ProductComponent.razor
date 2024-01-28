@@ -1,0 +1,14 @@
+﻿@page "/products/{productId:int}"
+
+<div class="gold-border">
+
+    <h3> Product ID: @ProductId</h3>
+
+</div>
+
+@code {
+
+    [Parameter]
+    public int ProductId { get; set; }
+
+}

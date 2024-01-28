@@ -1,0 +1,38 @@
+﻿<div class="gold-border">
+
+    <h3>Dropdown List</h3>
+
+    <select @onchange="OnSelectedChanged">
+        @foreach (var item in Items)
+        {
+            <option value="@item">@item</option>
+        }
+    </select>
+
+</div>
+
+@code {
+    [Parameter]
+    public IEnumerable<string> Items { get; set; }
+
+    [Parameter]
+    public EventCallback<string> OnItemSelected { get; set; }
+
+    private string? _selectedItem;
+
+    protected override void OnInitialized()
+    {
+        _selectedItem = Items.FirstOrDefault(); 
+    }
+
+    private void OnSelectedChanged(ChangeEventArgs args)
+    {
+        var selectedItem = args.Value.ToString();
+        if (selectedItem != null && selectedItem != _selectedItem)
+        {
+            _selectedItem = selectedItem;
+
+            OnItemSelected.InvokeAsync(selectedItem);
+        }
+    }
+}

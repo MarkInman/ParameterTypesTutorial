@@ -1,0 +1,17 @@
+﻿<div class="gold-border">
+
+    <h3>@CardTitle</h3>
+
+    <p>@CardText</p>
+
+</div>
+
+@code {
+    [Parameter, EditorRequired]
+    public string? CardTitle { get; set; }
+
+    [Parameter]
+    public string? CardText { get; set; } = "This is the default text";
+
+
+}

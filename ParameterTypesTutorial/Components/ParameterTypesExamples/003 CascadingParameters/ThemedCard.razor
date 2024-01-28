@@ -1,0 +1,16 @@
+﻿<div class="@Theme">
+
+    <h3>This is rendered in @Theme</h3>
+
+    <p>The card text here.</p>
+
+    <ThemedButton />
+
+</div>
+
+@code {
+
+    [CascadingParameter]
+    public string Theme { get; set; }
+
+}

@@ -1,0 +1,21 @@
+﻿@typeparam TItem
+
+<div class="gold-border">
+
+    <h3>Data List</h3>
+
+    <ul>
+        @foreach (var item in Items)
+        {
+            <li>@item</li>
+        }
+    </ul>
+
+</div>
+
+@code {
+
+    [Parameter]
+    public IEnumerable<TItem>? Items { get; set; }
+
+}
